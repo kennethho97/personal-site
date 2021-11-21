@@ -6,7 +6,7 @@ body {
 
   border-style: ridge none none;
   border-color: #AE4CCF;
-  border-width: 5px;
+  border-width: 3px;
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -46,22 +46,39 @@ h3 {
 }
 
 h4 {
-  color: #e9eaeb;
+  color: #AE4CCF;
   font-weight: bold;
   font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
   text-align: left;
   font-size: 25px;
 }
 
-label {
+h5 {
   color: #e9eaeb;
   font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
+  text-align: left;
+  font-size: 20px;
+  margin-top: 1px;
+  margin-bottom: 10px;
 }
 
-p {
+h6 {
   color: #e9eaeb;
   font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
   font-size: 15px;
+  margin-top: 5px;
+  margin-bottom: 2px;
+}
+
+p {
+  color: #949494;
+  font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
+  font-size: 13px;
+}
+
+label {
+  color: #e9eaeb;
+  font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
 }
 
 .resumeHeader {
@@ -76,6 +93,24 @@ p {
   width: 30%;
 }
 
-.education {
-  width: 100%;
+.resumeSection {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+.resumeEntry {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+.contentBullets {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+.columnBullets {
+  width: 85%;
 }
