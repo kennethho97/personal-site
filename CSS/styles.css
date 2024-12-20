@@ -76,21 +76,28 @@ p {
   font-size: 13px;
 }
 
+a {
+  color: #AE4CCF;
+  font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
+  font-size: 13px;
+}
+
 label {
   color: #e9eaeb;
   font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
 }
 
-.resumeHeader {
+.websiteTitleCard {
   margin-left: auto;
   margin-right: auto;
+  width: 700px
 }
 
-.links {
+.linksTable {
   margin-left: auto;
   margin-right: auto;
   text-align:center;
-  width: 30%;
+  width: 700px;
 }
 
 .resumeSection {
