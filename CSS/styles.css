@@ -70,6 +70,12 @@ h6 {
   margin-bottom: 2px;
 }
 
+li {
+  color: #949494;
+  font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
+  font-size: 13px;
+}
+
 p {
   color: #949494;
   font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
