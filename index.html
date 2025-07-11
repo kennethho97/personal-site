@@ -2,58 +2,216 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta charset="utf-8">
-  <title>☕ Kenny's Site</title>
-  <link rel="stylesheet" href="CSS/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kennyho.online</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="icon" href="./images/Headshot.png">
+  <style>
+    body {
+      font-family: "Lucida Sans Typewriter", "Lucida Console", "monaco", "Bitstream Vera Sans Mono", monospace;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background-color: #f8f8f8;
+      /* Dotted texture background */
+      background-image: radial-gradient(#e0e0e0 1px, transparent 1px);
+      background-size: 14px 14px;
+    }
+    
+    /* Custom height matching for carousel text */
+    .carousel-text-container {
+      min-height: 120px; /* Minimum height based on tallest content */
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    /* Ensure no vertical scrolling on desktop */
+    .desktop-layout {
+      /* height: calc(100vh - 64px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 64px; */
+    }
+    
+    /* Mobile menu animation */
+    .mobile-menu {
+      transition: max-height 0.3s ease-in-out;
+      max-height: 0;
+      overflow: hidden;
+    }
+    
+    .mobile-menu.active {
+      max-height: 300px; /* Adjust based on menu size */
+    }
+    
+    /* Header nav links hover effect */
+    .nav-link {
+      position: relative;
+      margin-left: 24px;
+      cursor: pointer;
+    }
+    
+    .nav-link:hover {
+      color: white;
+      background-color: black;
+    }
+    
+    /* Content container with rounded border */
+    .content-container {
+      background-color: white;
+      border-radius: 24px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      padding: 32px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    @media (max-width: 640px) {
+      .mobile-headshot {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+      }
+      
+      .desktop-layout {
+        height: auto;
+        margin-top: 56px; /* Smaller header on mobile */
+      }
+    }
+  </style>
 </head>
 
-<body>
-  <table class="websiteTitleCard">
-    <tr>
-      <td style="width: 30%;">
-        <img src="images/Headshot.png" alt="Kenny's Profile Picture" style="max-width: 100%;" style="height: auto;">
-      </td>
-      <td>
-        <h1>Hi, I'm Kenny</h1>
-        <p>
-          I'm not sure what I'm doing here, or what I want this website to become. 
-          I started it as the first step to learning web development. 
-          The <em>projects</em> link below will direct you to web applications I've built sometime in the future.
-          <br/>
-          <br/>
-          Another goal of mine is to be better a writer. 
-          The <em>writing</em> link below will direct you to my poorly written slop once I get the courage to share.
-          <br/>
-          <br/>
-          My resume is thrown in there as well. Just for fun. It's probably stale.
-        </p>
-        <!-- <h3 style="color: #AE4CCF;">
-          Contact Me: kennyho1516@gmail.com
-        </h3> -->
-      </td>
-    </tr>
-  </table>
-  <br/>
-  <table class="linksTable">
-    <tr>
-      <td>
-        <a href="./about-me.html">about me</a>
-      </td>
-      <td>
-        <a href="./projects.html">projects</a>
-      </td>
-      <td>
-        <a href="./writing.html">writing</a>
-      </td>
-      <td>
-        <a href="./resume.html">resume</a>
-      </td>
-    </tr>
-  </table>
- 
-
+<body class="bg-white text-black">
+  <!-- Fixed Header -->
+  <header class="fixed top-0 left-0 w-full bg-white border-b border-black/10 shadow-sm z-50">
+    <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+      <!-- Mobile Header - Only visible on small screens -->
+      <div class="sm:hidden flex w-full justify-between items-center">
+        <div class="text-yellow-400 font-bold">KENNYHO.ONLINE</div>
+        <button id="mobileMenuBtn" class="text-2xl">☰</button>
+      </div>
+      
+      <!-- Desktop Header - Hidden on small screens -->
+      <div class="hidden sm:flex w-full items-center justify-between">
+        <!-- Empty space to balance centered title -->
+        <!-- <div class="w-64"></div> -->
+        
+        <!-- Centered title -->
+        <div class="text-[#FF9B45] font-bold text-lg">KENNYHO.ONLINE</div>
+        
+        <!-- Navigation Links -->
+        <nav class="flex items-center">
+          <a href="/projects.html" class="nav-link px-2 py-1">Projects</a>
+          <a href="/readlist.html" class="nav-link px-2 py-1">ReadList</a>
+          <a href="/resume.html" class="nav-link px-2 py-1">Resume</a>
+          <a href="/contact-me.html" class="nav-link px-2 py-1">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
   
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="mobile-menu sm:hidden mt-14">
+    <div class="grid grid-cols-1 gap-2 p-4">
+      <a href="/projects.html" class="p-2 text-center border-b border-gray-100">Projects</a>
+      <a href="/readlist.html" class="p-2 text-center border-b border-gray-100">ReadList</a>
+      <a href="/resume.html" class="p-2 text-center border-b border-gray-100">Resume</a>
+      <a href="/contact-me.html" class="p-2 text-center border-b border-gray-100">Contact</a>
+    </div>
+  </div>
 
+  <!-- Main content section -->
+  <section id="mainContent" class="absolute h-[100vh] w-full flex flex-col justify-center desktop-layout">
+
+    <!-- hidden div for padding -->
+    <!-- <div class="pb-32"> -->
+
+      <!-- Main grid: 1 row x 4 columns -->
+      <div class="content-container grid sm:grid-cols-3 gap-12 w-5/6 sm:h-[275px] sm:w-[640px] grid-cols-1 mx-auto">
+        
+        <!-- Column 1: Headshot -->
+        <div class="col-span-1 sm:col-span-1 flex justify-center items-center">
+          <img src="images/Headshot.png" alt="Kenny's Profile Picture" class="w-full max-w-[120px] sm:max-w-full object-contain">
+        </div>
+        
+        <!-- Columns 2-4: Carousel content -->
+        <div class="col-span-2 sm:col-span-2">
+          <div class="grid grid-cols-4 gap-1 items-start">
+            <h1 class="text-3xl font-bold text-left col-span-3">Hi, I'm Kenny</h1>
+            <div class="flex justify-end items-center space-x-1 col-span-1">
+              <button id="prevBtn" class="text-black text-2xl px-2">&lt;</button>
+              <button id="nextBtn" class="text-black text-2xl px-2">&gt;</button>
+            </div>
+            <div class="col-span-4 relative pt-4" id="carouselWrapper">
+              <div id="carouselContent" class="transition duration-500 ease-in-out relative carousel-text-container">
+                <div class="text-base w-full flex items-start" data-index="0">
+                  <p>
+                    I started this website as the first step to learning web development.
+                    I'm a Technical Program Manager at Amazon, where I help secure diverse products from IoT devices to satellites.
+                  </p>
+                </div>
+                <div class="text-base hidden w-full flex items-start" data-index="1">
+                  <p>
+                    In my freetime I like to snowboard, cook, hangout at the lake, and read.
+                    I really enjoy scifi, articles about emerging tech, and biographies/memoirs of notable people in the industry (think Masters of Doom).
+                  </p>
+                </div>
+                <div class="text-base hidden w-full flex items-start" data-index="2">
+                  <p>
+                    I've got a strong interest in DeFi and consumer dApps/protocols. If you're building in this space, I write product marketing content pro bono for 
+                    startups if I like the vision. Please reach out!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- </div> -->
+  </section>
+
+  <script>
+    // Carousel Logic
+    const slides = document.querySelectorAll('#carouselContent > div');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('hidden', i !== index);
+      });
+    }
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(currentIndex);
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    });
+
+    // Mobile menu toggle
+    document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('active');
+    });
+
+    // Initialize first slide
+    showSlide(currentIndex);
+
+    // Automatically rotate slides every 30 seconds
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }, 30000);
+  </script>
 </body>
 
 </html>
+
+
+
+
+
